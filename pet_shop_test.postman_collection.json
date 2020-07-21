@@ -1,0 +1,584 @@
+{
+	"info": {
+		"_postman_id": "34d051a5-4ab3-474c-9e2f-6fef8664adcc",
+		"name": "pet_shop_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pet",
+			"item": [
+				{
+					"name": "find pet by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet/1234567890",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet",
+								"1234567890"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find by status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet/1",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload images",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet/12345678/uploadImage",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet",
+								"12345678",
+								"uploadImage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add new pet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1234567890,\r\n  \"category\": {\r\n    \"id\": 12123456,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"kattie\",\r\n  \"photoUrls\": [\r\n    \"not support now\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 123456789,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update pet info",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1234567890,\r\n  \"category\": {\r\n    \"id\": 12123456,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"kattie\",\r\n  \"photoUrls\": [\r\n    \"https://bom.to/SwC5Lq\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 123456789,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete pet",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1234567890,\r\n  \"category\": {\r\n    \"id\": 12123456,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"kattie\",\r\n  \"photoUrls\": [\r\n    \"https://bom.to/SwC5Lq\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 123456789,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet/1234567890",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet",
+								"1234567890"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "store",
+			"item": [
+				{
+					"name": "add new order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"123456789\",\r\n  \"petId\": \"1\",\r\n  \"quantity\": \"2\",\r\n  \"shipDate\": \"2020-07-21T01:35:51.416Z\",\r\n  \"status\": \"placed\",\r\n  \"complete\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/store/order",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"store",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find order purchase",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"123456789\",\r\n  \"petId\": \"1\",\r\n  \"quantity\": \"2\",\r\n  \"shipDate\": \"2020-07-21T01:35:51.416Z\",\r\n  \"status\": \"placed\",\r\n  \"complete\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/store/order/1",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"store",
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "return pet inventories by status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"123456789\",\r\n  \"petId\": \"1\",\r\n  \"quantity\": \"2\",\r\n  \"shipDate\": \"2020-07-21T01:35:51.416Z\",\r\n  \"status\": \"placed\",\r\n  \"complete\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/store/inventory",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"store",
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete purchase",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"123456789\",\r\n  \"petId\": \"1\",\r\n  \"quantity\": \"2\",\r\n  \"shipDate\": \"2020-07-21T01:35:51.416Z\",\r\n  \"status\": \"placed\",\r\n  \"complete\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/store/order/1",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"store",
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "user ",
+			"item": [
+				{
+					"name": "sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"123456789\",\r\n  \"username\": \"hinhwag\",\r\n  \"firstName\": \"Hoang\",\r\n  \"lastName\": \"Hinh\",\r\n  \"email\": \"abc@gmail.com\",\r\n  \"password\": \"123456789\",\r\n  \"phone\": \"123456789\",\r\n  \"userStatus\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list of user object",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n  \"id\": \"123456789\",\r\n  \"username\": \"hinhwag\",\r\n  \"firstName\": \"Hoang\",\r\n  \"lastName\": \"Hinh\",\r\n  \"email\": \"abc@gmail.com\",\r\n  \"password\": \"123456789\",\r\n  \"phone\": \"123456789\",\r\n  \"userStatus\": 0\r\n}\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user/createWithArray",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user",
+								"createWithArray"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list of user object list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n  \"id\": \"123456789\",\r\n  \"username\": \"hinhwag\",\r\n  \"firstName\": \"Hoang\",\r\n  \"lastName\": \"Hinh\",\r\n  \"email\": \"abc@gmail.com\",\r\n  \"password\": \"123456789\",\r\n  \"phone\": \"123456789\",\r\n  \"userStatus\": 0\r\n}\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user/createWithList",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user",
+								"createWithList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n  \"id\": \"123456789\",\r\n  \"username\": \"hinhwag\",\r\n  \"firstName\": \"Hoang\",\r\n  \"lastName\": \"Hinh\",\r\n  \"email\": \"abc@gmail.com\",\r\n  \"password\": \"123456789\",\r\n  \"phone\": \"123456789\",\r\n  \"userStatus\": 0\r\n}\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user/hinhwag",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user",
+								"hinhwag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log in status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n  \"id\": \"123456789\",\r\n  \"username\": \"hinhwag\",\r\n  \"firstName\": \"Hoang\",\r\n  \"lastName\": \"Hinh\",\r\n  \"email\": \"abc@gmail.com\",\r\n  \"password\": \"123456789\",\r\n  \"phone\": \"123456789\",\r\n  \"userStatus\": 0\r\n}\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user/login?username=hinhwag&password=123456789",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "hinhwag"
+								},
+								{
+									"key": "password",
+									"value": "123456789"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log out status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n  \"id\": \"123456789\",\r\n  \"username\": \"hinhwag\",\r\n  \"firstName\": \"Hoang\",\r\n  \"lastName\": \"Hinh\",\r\n  \"email\": \"abc@gmail.com\",\r\n  \"password\": \"123456789\",\r\n  \"phone\": \"123456789\",\r\n  \"userStatus\": 0\r\n}\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user/logout",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n  \"id\": \"123456789\",\r\n  \"username\": \"hinhwag\",\r\n  \"firstName\": \"Hoang\",\r\n  \"lastName\": \"Dinh Hinh\",\r\n  \"email\": \"abc@gmail.com\",\r\n  \"password\": \"123456789\",\r\n  \"phone\": \"123456789\",\r\n  \"userStatus\": 0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user/hinhwag",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user",
+								"hinhwag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n  \"id\": \"123456789\",\r\n  \"username\": \"hinhwag\",\r\n  \"firstName\": \"Hoang\",\r\n  \"lastName\": \"Dinh Hinh\",\r\n  \"email\": \"abc@gmail.com\",\r\n  \"password\": \"123456789\",\r\n  \"phone\": \"123456789\",\r\n  \"userStatus\": 0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user/hinhwag",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user",
+								"hinhwag"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
