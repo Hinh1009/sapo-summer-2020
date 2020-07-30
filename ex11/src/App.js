@@ -24,7 +24,7 @@ class App extends Component {
 
   checkLoginSuccess(user) {
     let isSuccess = 0;
-    this.state.userList.map((ele, index) => {
+    this.state.userList.map((ele) => {
       if (ele.userName === user.userName) {
         if (ele.password === user.password)
           isSuccess = 1;
@@ -54,7 +54,7 @@ class App extends Component {
     } else {
       return (
         <div >
-          <span class="name">Hello {this.state.loginUser}. Welcome to first step reactJS</span><br />
+          <span class="name">Hello <b>{this.state.loginUser}</b>. Welcome to first step reactJS</span><br />
         </div>
       );
     }
