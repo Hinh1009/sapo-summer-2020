@@ -10,8 +10,8 @@ class TableGroup extends Component {
     super(props)
 
     this.state = {
-      requesting:'false',
-      listInQueue:'false',
+      requesting: false,
+      listInQueue: false,
 
       TableHeader: ['Title', 'Description', 'Categories'],
       list: [],
@@ -70,7 +70,7 @@ class TableGroup extends Component {
   }
 
   callApiCount(state) {
-    this.setState({requesting:true})
+    this.setState({ requesting: true })
     let { search, filter } = this.state
     let queryParams = {
       count: true,
@@ -87,17 +87,17 @@ class TableGroup extends Component {
         let count = res.data.count || 0
         this.setState({ count })
       })
-      .finally(()=>{
-        this.setState({requesting:false})
+      .finally(() => {
+        this.setState({ requesting: false })
       })
   }
 
   callApiList(state) {
-    if(this.state.requesting){
-      this.setState({listInQueue:true})
+    if (this.state.requesting) {
+      this.setState({ listInQueue: true })
       return
     }
-    let { pageIndex, pageSize, search, filter } = this.state
+    let { pageIndex, pageSize, search, filter } = state
 
     let queryParams = {
       pageIndex,
@@ -106,7 +106,7 @@ class TableGroup extends Component {
       categoryId: filter.categoryId || ''
     }
 
-    let res = axios.request({
+    axios.request({
       url: 'http://localhost:9000/api/productasc',
       method: 'GET',
       params: queryParams
@@ -116,6 +116,7 @@ class TableGroup extends Component {
       this.setState({ list })
     })
   }
+
   callOptionCategories() {
     axios.request({
       url: 'http://localhost:9000/api/category',
@@ -135,18 +136,18 @@ class TableGroup extends Component {
   }
   render() {
     console.log('render')
-    let { list, TableHeader, count, pageIndex, pageSize, filter, optionCategories,search } = this.state
+    let { list, TableHeader, count, pageIndex, pageSize, filter, optionCategories, search } = this.state
     return (
       <div className="c-table-group">
         {/* {this.state.count}
         {JSON.stringify(this.state.list)} */}
         <div>
           <SearchForm
-          value={search}
-          onChange={(value)=>{
-            this.setPageConfig({search:value})
-          } }
-          placeholder="Enter search keywords..."/>
+            value={search}
+            onChange={(value) => {
+              this.setPageConfig({ search: value })
+            }}
+            placeholder="Enter search keywords..." />
           <CDropdown
             value={filter.categoryId}
             options={optionCategories}
